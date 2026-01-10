@@ -1,25 +1,25 @@
 #Determine your grade
 marks = int(input("Enter your marks:"))
 
-if marks<=100 and marks>=90:
-  grade="A"
-  print("You scored",marks,"marks.","Your grade is",grade,end=".")
-
-elif marks<=89 and marks>=80:
-  grade="B"
-  print("You scored",marks,"marks.","Your grade is",grade,end=".")
-
-elif marks<=79 and marks>=70:
-  grade="C"
-  print("You scored",marks,"marks.","Your grade is",grade,end=".")
-
-elif marks<=69 and marks>=60:
-  grade="D"
-  print("You scored",marks,"marks.","Your grade is",grade,end=".")
-
-elif marks<=59 and marks>=0:
-  grade="F"
-  print("You scored",marks,"marks.","Your grade is",grade,end=".")
-
-else:
+#Check if marks are outside the valid range
+if marks<0 or marks>100:
   print("Invalid marks! Please enter a value between 0 and 100.")
+
+else:#Determine the grade based on marks
+  if marks>=90:
+    grade="A"
+
+  elif marks>=80:
+    grade="B"
+ 
+  elif marks>=70:
+    grade="C"
+ 
+  elif marks>=60:
+    grade="D"
+  
+  else:
+    grade="F"
+  
+#Display result
+  print("You scored",marks,"marks.","Your grade is",grade,end=".")
