@@ -1,20 +1,18 @@
 import time
+
 name = "Bishesh"
-exactTime = time.strftime('%H:%M:%S')
+
+current_time = time.strftime('%H:%M:%S')
 hour = int(time.strftime('%H'))
-if hour>=12 and hour<16:
-  print("Good afternoon, Mr.",name,end='.')
 
-elif hour>=20 and hour<24:
-  print("Good night, Mr.",name,end='.')
-
-elif hour>=4 and hour<12:
-  print("Good morning, Mr.",name,end='.')
-
-elif hour>=16 and hour<20:
-  print("Good evening, Mr.",name,end='.')
-
+if hour >= 4 and hour < 12:
+    greeting = "Good morning"
+elif hour >= 12 and hour < 16:
+    greeting = "Good afternoon"
+elif hour >= 16 and hour < 20:
+    greeting = "Good evening"
 else:
-  print("Good night, Mr.",name,end='.')
+    greeting = "Good night"
 
-print("Current time is:",exactTime)
+print(greeting, "Mr.", name + ".")
+print("Current time is:", current_time)
