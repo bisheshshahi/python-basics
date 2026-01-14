@@ -20,10 +20,10 @@ while True:
     count = count+1     #no. of attempts
     
     if user_num<num:    
-      print(f"The secret number is smaller than this.\nNo. of attempts={count}")
+      print(f"The secret number is bigger than this.\nNo. of attempts={count}")
 
     elif user_num>num:
-      print(f"The secret number is bigger than this.\nNo. of attempts={count}")
+      print(f"The secret number is smaller than this.\nNo. of attempts={count}")
 
     else:
       print("Congratulations you guessed the number correctly.")
