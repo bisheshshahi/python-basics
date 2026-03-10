@@ -1,7 +1,5 @@
 #Palin as palindrome
 
-text = input("Enter the word to check whether the word is palindrome or not: ")
-
 def palin(check,original):
   if len(check)<=1:
     print(f"The given text '{original}' is palindrome.")
@@ -11,4 +9,8 @@ def palin(check,original):
     else:
       print(f"The given text '{original}' is not a palindrome.")
 
-palin(text,text)
+while True:
+  text = input("Enter the word to check whether the word is palindrome or not (or type 'exit' to quit): ")
+  if text == "exit":
+    break
+  palin(text,text)
