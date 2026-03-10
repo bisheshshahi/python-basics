@@ -11,6 +11,6 @@ def palin(check,original):
 
 while True:
   text = input("Enter the word to check whether the word is palindrome or not (or type 'exit' to quit): ")
-  if text == "exit":
+  if text.lower().strip() == "exit":
     break
   palin(text,text)
