@@ -12,8 +12,14 @@ class Fraction:
     if d == 0:
       raise ValueError("Denominator cannot be zero")
 
-    self.num = n
-    self.den = d
+    #stores unsimplified numerator and denominator 
+    self.num = n 
+    self.den = d 
+
+    # Keep denominator positive
+    if self.den < 0:
+      self.num *= -1
+      self.den *= -1
   
   def __str__(self):
     return f"{self.num}/{self.den}"
@@ -44,9 +50,8 @@ class Fraction:
     gcd = math.gcd(n,d)
     return Fraction(n // gcd, d // gcd)
   
-frac1 = Fraction(10,20)
+frac1 = Fraction(10,-2)
 frac2 = Fraction(30,40)
-frac3 = Fraction("a",2)
 
 print(frac1)
 print(frac2)
@@ -54,4 +59,3 @@ print(frac1+frac2)
 print(frac1-frac2)
 print(frac1*frac2)
 print(frac1/frac2)
-print(frac3)
