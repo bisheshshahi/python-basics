@@ -5,7 +5,7 @@ class Fraction:
 
   def __init__(self,n,d): #n as numerator, d as denominator
 
-    #isinstance checks whether n is integer or not
+    #isinstance checks whether n is the type written on it or not
     if not isinstance(n,int) or not isinstance(d,int):
       raise TypeError("Numerator and denominator must be integers")
 
@@ -24,6 +24,11 @@ class Fraction:
   def __str__(self):
     return f"{self.num}/{self.den}"
     # return "{}/{}".format(self.num,self.den) Another way of using string formatting
+  
+  #runs when __str__ method is not found
+  #__repr__ is mainly used for debugging as output is diff from __str__
+  def __repr__(self):
+      return f"Fraction({self.num}, {self.den})"
   
   def __add__(self, other): #other is needed as we're doing for binary operator
     temp_num = self.num * other.den + other.num * self.den
