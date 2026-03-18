@@ -71,6 +71,31 @@ class Fraction:
     temp_den = self.den * other.num
     return  Fraction(temp_num,temp_den).simplify()
 
+# Comparison operators
+  #checks equal to
+  def __eq__(self, other):
+      other = self._convert(other)
+      f1 = self.simplify()
+      f2 = other.simplify()
+      return f1.num == f2.num and f1.den == f2.den
+  
+  #less than
+  def __lt__(self, other):
+      other = self._convert(other)
+      return self.num * other.den < other.num * self.den
+  
+  #less than or equal to
+  def __le__(self, other):
+      return self < other or self == other
+  
+  #greater than
+  def __gt__(self, other):
+      other = self._convert(other)
+      return self.num * other.den > other.num * self.den
+  
+  #greater than or equal to
+  def __ge__(self, other):
+      return self > other or self == other
   
 #Testing
 frac1 = Fraction(10,-2)
