@@ -115,3 +115,9 @@ print(frac1/frac2)
 
 print("Example for _convert method")
 print(frac1 * 2)
+
+print("Greater than")
+print(frac1>frac2)
+
+print("Less than or equal to")
+print(frac1<=frac2)
