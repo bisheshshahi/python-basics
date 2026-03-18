@@ -74,29 +74,42 @@ class Fraction:
 # Comparison operators
   #checks equal to
   def __eq__(self, other):
-      other = self._convert(other)
-      f1 = self.simplify()
-      f2 = other.simplify()
-      return f1.num == f2.num and f1.den == f2.den
+    other = self._convert(other)
+    f1 = self.simplify()
+    f2 = other.simplify()
+    return f1.num == f2.num and f1.den == f2.den
   
   #less than
   def __lt__(self, other):
-      other = self._convert(other)
-      return self.num * other.den < other.num * self.den
+    other = self._convert(other)
+    return self.num * other.den < other.num * self.den
   
   #less than or equal to
   def __le__(self, other):
-      return self < other or self == other
+    return self < other or self == other
   
   #greater than
   def __gt__(self, other):
-      other = self._convert(other)
-      return self.num * other.den > other.num * self.den
+    other = self._convert(other)
+    return self.num * other.den > other.num * self.den
   
   #greater than or equal to
   def __ge__(self, other):
-      return self > other or self == other
+    return self > other or self == other
+
+# Ngation, absolute, power
+  # __neg__ lips the sign of the fraction
+  def __neg__(self):
+    return Fraction(-self.num, self.den)
   
+  #__abs__ makes fraction positive
+  def __abs__(self):
+    return Fraction(abs(self.num), abs(self.den))
+  
+  #raises numerator and denominator to power
+  def __pow__(self, power):
+    return Fraction(self.num ** power, self.den ** power).simplify() 
+   
 #Testing
 frac1 = Fraction(10,-2)
 frac2 = Fraction(30,3)
@@ -121,3 +134,15 @@ print(frac1>frac2)
 
 print("Less than or equal to")
 print(frac1<=frac2)
+
+print("Negation")
+print(-frac1)
+print(-frac2)
+
+print("Absolute value")
+print(abs(frac1))
+print(abs(frac2))
+
+print("Power")
+print(frac1 ** 2)
+print(frac2 ** 3)
