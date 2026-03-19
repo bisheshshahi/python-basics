@@ -5,7 +5,6 @@ class Atm:
     def __init__(self):
       self.pin = ""
       self.balance = 0
-      self.menu()
 
     def menu(self):
       while True:
@@ -71,7 +70,6 @@ class Atm:
       else:
         print("Incorrect pin!")
       
-
-
-
-bishesh = Atm()
+if __name__ == "__main__":
+    bishesh = Atm()
+    bishesh.menu()
