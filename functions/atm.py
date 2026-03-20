@@ -3,8 +3,8 @@
 class Atm:
 
     def __init__(self):
-      self.pin = ""
-      self.balance = 0
+      self.__pin = ""
+      self.__balance = 0
 
     def menu(self):
       while True:
@@ -36,26 +36,26 @@ class Atm:
           print("Invalid option!")
       
     def create_pin(self):
-      if self.pin:
+      if self.__pin:
         print("Pin already set.")
         return
-      self.pin = int(input("Create your pin: "))
+      self.__pin = input("Create your pin: ").strip()
       print("Pin created successfully.")
 
     def deposit(self):
-      temp = int(input("Enter your pin: "))
-      if temp == self.pin:
-        amount = int(input("Enter the amount you want to deposit: "))
-        self.balance += amount
+      temp = input("Enter your pin: ").strip()
+      if temp == self.__pin:
+        amount = float(input("Enter the amount you want to deposit: ").strip())
+        self.__balance += amount
       else:
         print("Incorrect pin!")
 
     def withdraw(self):
-      temp = int(input("Enter your pin: "))
-      if temp == self.pin:
-        amount = int(input("Enter the amount you want to withdraw: "))
-        if amount<=self.balance:
-          self.balance -= amount
+      temp = input("Enter your pin: ").strip()
+      if temp == self.__pin:
+        amount = float(input("Enter the amount you want to withdraw: ").strip())
+        if amount<=self.__balance:
+          self.__balance -= amount
           print("Withdrawal successful.")
         else:
           print("Insufficient amount.")
@@ -63,9 +63,9 @@ class Atm:
         print("Incorrect pin!")
     
     def check_balance(self):
-      temp = int(input("Enter your pin: "))
-      if temp == self.pin:
-        print(self.balance)
+      temp = input("Enter your pin: ").strip()
+      if temp == self.__pin:
+        print(self.__balance)
       
       else:
         print("Incorrect pin!")
