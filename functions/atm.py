@@ -12,7 +12,9 @@ class Atm:
     
     #set the value of pin using method
     def set_pin(self,new_pin):
-      self.__pin = new_pin 
+      if type(new_pin) == str:
+        self.__pin = new_pin
+        print("Pin changed")
 
     def menu(self):
       while True:
