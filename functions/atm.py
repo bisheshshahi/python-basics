@@ -6,6 +6,14 @@ class Atm:
       self.__pin = ""
       self.__balance = 0
 
+    #get the value of pin using method
+    def get_pin():
+      return set.__pin
+    
+    #set the value of pin using method
+    def set_pin(self,new_pin):
+      self.__pin = new_pin 
+
     def menu(self):
       while True:
         user_input = input("""
