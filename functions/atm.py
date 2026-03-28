@@ -10,7 +10,7 @@ class Atm:
         # Instance variables
         self.__pin = ""
         self.__balance = 0
-        self.sno = Atm.__counter
+        self.__sno = Atm.__counter
         Atm.__counter += 1
 
     @staticmethod
@@ -23,6 +23,9 @@ class Atm:
             Atm.__counter = new
         else:
             print("The value must be integer")
+    
+    def get_sno(self):
+        return self.__sno
 
     # Get the value of pin using method
     def get_pin(self):
@@ -61,7 +64,7 @@ class Atm:
             print("GoodBye")
 
         elif user_input == "6":
-            print("Your serial number is" , self.sno)
+            print("Your serial number is" , self.__sno)
         
         else:
             print("Invalid option!")
