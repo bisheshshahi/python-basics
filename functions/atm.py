@@ -3,15 +3,15 @@
 class Atm:
 
     # Static variable
-    counter = 1
+    __counter = 1
 
     def __init__(self):
 
         # Instance variables
         self.__pin = ""
         self.__balance = 0
-        self.sno = Atm.counter
-        Atm.counter += 1
+        self.sno = Atm.__counter
+        Atm.__counter += 1
 
     # Get the value of pin using method
     def get_pin(self):
