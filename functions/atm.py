@@ -13,6 +13,17 @@ class Atm:
         self.sno = Atm.__counter
         Atm.__counter += 1
 
+    @staticmethod
+    def get_counter():
+        return Atm.__counter
+
+    @staticmethod
+    def set_counter(new):
+        if type(new) == int:
+            Atm.__counter = new
+        else:
+            print("The value must be integer")
+
     # Get the value of pin using method
     def get_pin(self):
         return self.__pin
