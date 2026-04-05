@@ -1,6 +1,7 @@
 from tkinter import *
 from PIL import ImageTk, Image
 from tkinter import messagebox
+import os
 
 def handle_login():
   email = email_input.get()
@@ -18,11 +19,14 @@ def handle_login():
 root = Tk()
 root.title("Login")
 root.minsize(275,340)
-
 root.configure(background = "#0096DC")
 
-root.iconbitmap("D:/bishesh/python-basics/tkinter/bishesh_icon.ico")
-img = Image.open("D:/bishesh/python-basics/tkinter/flipkart.png")
+folder = os.path.dirname(__file__)                             
+icon_path = os.path.join(folder, "bishesh_icon.ico")           
+img_path = os.path.join(folder, "flipkart.png")                
+
+root.iconbitmap(icon_path)
+img = Image.open(img_path)
 resized_img = img.resize((70,70))
 img = ImageTk.PhotoImage(resized_img)
 
