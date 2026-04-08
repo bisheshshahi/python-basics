@@ -13,6 +13,7 @@ root.title("Wallpaper Viewer")
 
 root.geometry("250x300")
 root.configure(background = "black")
+root.minsize(160,260)
 
 folder = os.path.dirname(__file__)
 subfolder = os.path.join(folder, "wallpapers")
