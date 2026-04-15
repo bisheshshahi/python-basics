@@ -21,6 +21,7 @@ class NewsApp:
 
     def load_gui(self):
         self.root = Tk()
+        self.root.title("Nepal News App")
         self.root.geometry("350x600")
         self.root.resizable(0, 0)
         self.root.config(background="black")
