@@ -48,6 +48,10 @@ class NewsApp:
         except Exception:
             placeholder = Label(self.root, text="[Image not available]", bg="gray", fg="white", width=50, height=10)
             placeholder.pack()
+        
+        counter = Label(self.root, text=f"Article {index+1} of {len(self.data["articles"])}", width=30, fg="gray", bg="black")
+        counter.config(font=("verdana",10,"italic"))
+        counter.pack(pady=5)
 
         # Display title
         heading = Label(self.root, text=self.data["articles"][index]["title"], bg="black", fg="white", wraplength=350, justify="center")
